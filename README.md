@@ -15,7 +15,8 @@ This script automates the installation and configuration of a complete developme
 - Cascadia Code font installation and configuration
 - Docker installation and configuration (run without sudo)
 - Tailscale VPN client installation and setup
-- JetBrains DataGrip IDE installation
+- JetBrains IDEs installation (DataGrip, WebStorm)
+- Postman API client installation
 - Timezone fix for dual-boot systems
 
 ## Usage
@@ -58,6 +59,8 @@ You can choose to install only specific components by providing them as argument
 - `docker` - Install Docker and configure to run without sudo
 - `tailscale` - Install Tailscale VPN client
 - `datagrip` - Install JetBrains DataGrip IDE for databases
+- `webstorm` - Install JetBrains WebStorm IDE for web development
+- `postman` - Install Postman API client
 - `timezone` - Fix timezone for dual boot systems
 - `help` - Show this help message
 
@@ -85,7 +88,8 @@ The project is structured in a modular way:
 - `scripts/install_apps.sh` - Application installation functions
 - `scripts/docker.sh` - Docker installation and configuration functions
 - `scripts/tailscale.sh` - Tailscale installation and setup functions
-- `scripts/jetbrains.sh` - JetBrains tools (DataGrip) installation functions
+- `scripts/jetbrains.sh` - JetBrains tools (DataGrip, WebStorm) installation functions
+- `scripts/postman.sh` - Postman API client installation functions
 
 ## Requirements
 
