@@ -76,8 +76,8 @@ install_datagrip() {
                 # Create desktop entry and launcher script
                 echo "${Cyan}Creating desktop entry and launcher script...${Color_Off}"
                 
-                # Find the exact bin directory
-                BIN_DIR=$(find "$DATAGRIP_DIR" -name "bin" -type d | head -n 1)
+                # Find the exact bin directory that contains datagrip.sh
+                BIN_DIR=$(find "$DATAGRIP_DIR" -name "bin" -type d -exec test -f "{}/datagrip.sh" \; -print | head -n 1)
                 
                 if [ -d "$BIN_DIR" ]; then
                     # Create a launcher script in /usr/local/bin
@@ -204,8 +204,8 @@ install_webstorm() {
                 # Create desktop entry and launcher script
                 echo "${Cyan}Creating desktop entry and launcher script...${Color_Off}"
                 
-                # Find the exact bin directory
-                BIN_DIR=$(find "$WEBSTORM_DIR" -name "bin" -type d | head -n 1)
+                # Find the exact bin directory that contains webstorm.sh
+                BIN_DIR=$(find "$WEBSTORM_DIR" -name "bin" -type d -exec test -f "{}/webstorm.sh" \; -print | head -n 1)
                 
                 if [ -d "$BIN_DIR" ]; then
                     # Create a launcher script in /usr/local/bin
