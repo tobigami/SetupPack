@@ -13,6 +13,7 @@ This script automates the installation and configuration of a complete developme
 - Node Version Manager (NVM) setup
 - Spotify installation via Snap
 - Cascadia Code font installation and configuration
+- Docker installation and configuration (run without sudo)
 - Timezone fix for dual-boot systems
 
 ## Usage
@@ -20,7 +21,8 @@ This script automates the installation and configuration of a complete developme
 First, make the script executable:
 
 ```bash
-chmod +x install.sh
+chmod +x main.sh
+chmod +x scripts/*.sh
 ```
 
 ### Install Everything (Default)
@@ -28,7 +30,7 @@ chmod +x install.sh
 To install and configure all components:
 
 ```bash
-./install.sh
+./main.sh
 ```
 
 ### Install Specific Components
@@ -36,7 +38,7 @@ To install and configure all components:
 You can choose to install only specific components by providing them as arguments:
 
 ```bash
-./install.sh [options]
+./main.sh [options]
 ```
 
 ### Available Options:
@@ -51,6 +53,7 @@ You can choose to install only specific components by providing them as argument
 - `nvm` - Install NVM (Node Version Manager)
 - `spotify` - Install Spotify
 - `font` - Install Cascadia Code Font
+- `docker` - Install Docker and configure to run without sudo
 - `timezone` - Fix timezone for dual boot systems
 - `help` - Show this help message
 
@@ -58,14 +61,25 @@ You can choose to install only specific components by providing them as argument
 
 ```bash
 # Configure Git and generate SSH key only
-./install.sh git
+./main.sh git
 
 # Install Chrome and VSCode only
-./install.sh chrome vscode
+./main.sh chrome vscode
 
 # Show help
-./install.sh help
+./main.sh help
 ```
+
+## Project Structure
+
+The project is structured in a modular way:
+
+- `main.sh` - Main entry point of the script
+- `scripts/common.sh` - Common functions and variables
+- `scripts/system_config.sh` - System configuration functions
+- `scripts/dev_tools.sh` - Development tools installation functions
+- `scripts/install_apps.sh` - Application installation functions
+- `scripts/docker.sh` - Docker installation and configuration functions
 
 ## Requirements
 
