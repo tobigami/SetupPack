@@ -9,6 +9,9 @@ source "$SCRIPT_DIR/system_config.sh"
 source "$SCRIPT_DIR/dev_tools.sh"
 source "$SCRIPT_DIR/install_apps.sh"
 source "$SCRIPT_DIR/docker.sh"
+source "$SCRIPT_DIR/tailscale.sh"
+source "$SCRIPT_DIR/jetbrains.sh"
+source "$SCRIPT_DIR/postman.sh"
 
 # Main function to run the script with arguments
 main() {
@@ -28,6 +31,10 @@ main() {
         install_spotify
         install_cascadia_font
         install_docker
+        install_tailscale
+        install_datagrip
+        install_webstorm
+        install_postman
         fix_timezone
         show_completion
         exit 0
@@ -76,6 +83,18 @@ main() {
                 ;;
             docker)
                 install_docker
+                ;;
+            tailscale)
+                install_tailscale
+                ;;
+            datagrip)
+                install_datagrip
+                ;;
+            webstorm)
+                install_webstorm
+                ;;
+            postman)
+                install_postman
                 ;;
             *)
                 echo "${Red}Unknown option: $option${Color_Off}"
