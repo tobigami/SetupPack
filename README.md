@@ -33,7 +33,7 @@ chmod +x scripts/*.sh
 To install and configure all components:
 
 ```bash
-./main.sh
+bash main.sh
 ```
 
 ### Install Specific Components
@@ -41,7 +41,7 @@ To install and configure all components:
 You can choose to install only specific components by providing them as arguments:
 
 ```bash
-./main.sh [options]
+bash main.sh [options]
 ```
 
 ### Available Options:
@@ -68,13 +68,13 @@ You can choose to install only specific components by providing them as argument
 
 ```bash
 # Configure Git and generate SSH key only
-./main.sh git
+bash main.sh git
 
 # Install Chrome and VSCode only
-./main.sh chrome vscode
+bash main.sh chrome vscode
 
 # Show help
-./main.sh help
+bash main.sh help
 ```
 
 ## Project Structure
